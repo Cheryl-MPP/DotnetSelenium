@@ -43,13 +43,8 @@ The purpose of this repository is to showcase automation skills and provide a si
 git clone https://github.com/YOUR-USERNAME/DotnetSelenium.git
 
 ```
-```
-```
 
 Project Structure
-
-```
-```
 
 2. Navigate to the project folder:
 
