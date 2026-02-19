@@ -101,7 +101,7 @@ This project uses a local HTML file for testing purposes to avoid dependency on 
 
 Only this:
 
-***https://github.com/YOUR-USERNAME/DotnetSelenium.git***
+***https://github.com/Cheryl-MPP/DotnetSelenium***
 
 ---
 
