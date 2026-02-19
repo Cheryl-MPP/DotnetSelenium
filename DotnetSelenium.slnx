@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="../../../SeleniumDemo/testpage.html" />
+  </Folder>
+  <Project Path="DotnetSelenium/DotnetSelenium.csproj" />
+</Solution>

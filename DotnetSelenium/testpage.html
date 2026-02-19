@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Page Selenium</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    label { display: inline-block; width: 140px; margin-bottom: 10px; }
+    .row { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Sample Form with Various Controls</h2>
+
+  <div class="row">
+    <label for="txtName">Textbox:</label>
+    <input id="txtName" type="text" />
+  </div>
+
+  <div class="row">
+    <label for="ddlOptions">Dropdown:</label>
+    <select id="ddlOptions">
+      <option value="">--Seleccione--</option>
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <label for="msOptions">Multiselect Box:</label>
+    <select id="msOptions" multiple size="3">
+      <option value="multi1">Multi 1</option>
+      <option value="multi2">Multi 2</option>
+      <option value="multi3">Multi 3</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <button id="btnSubmit" type="button" onclick="submitForm()">Submit</button>
+  </div>
+
+  <div class="row">
+    <strong>Result:</strong>
+    <div id="result" style="margin-top:6px;"></div>
+  </div>
+
+  <script>
+    function submitForm() {
+      const name = document.getElementById('txtName').value;
+      const ddl = document.getElementById('ddlOptions').value;
+      const ms = Array.from(document.getElementById('msOptions').selectedOptions).map(o => o.value);
+      document.getElementById('result').innerText =
+        `name=${name} | ddl=${ddl} | multi=${ms.join(',')}`;
+    }
+  </script>
+</body>
+</html>
