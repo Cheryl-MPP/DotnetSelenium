@@ -44,10 +44,11 @@ git clone https://github.com/YOUR-USERNAME/DotnetSelenium.git
 
 ```
 ```bash
+```
 
+Project Structure
 
-## 📂 **Project Structure**
-
+```
 ```
 
 2. Navigate to the project folder:
