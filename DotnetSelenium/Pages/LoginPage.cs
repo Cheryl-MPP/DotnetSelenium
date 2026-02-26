@@ -19,7 +19,7 @@ namespace DotnetSelenium.Pages
         //usaremos la propiedad de Lambda para generar los elementos de la página
         //Lambda elimina llaves, return y get
         //Cada vez que accedemos a la propiedad:LoginLink
-        //TxtUser, TxtPassword, TxtPassword, BtnLogin 
+        //TxtUserName, TxtPassword, TxtPassword, BtnLogin 
         //se ejecuta el código que está a la derecha de la flecha o driver.FindElement(...)
         //
         IWebElement LoginLink => driver.FindElement(By.Id("loginLink"));
@@ -36,21 +36,34 @@ namespace DotnetSelenium.Pages
 
         IWebElement LnkLogoff => driver.FindElement(By.LinkText("Log off"));
 
+        //Estos métodos representan las acciones que
+        //se pueden realizar en la página de inicio
+        //de sesión, como hacer clic en el enlace de
+        //inicio de sesión, ingresar el nombre de usuario
+        //y la contraseña, y verificar si el usuario ha
+        //iniciado sesión correctamente.
         public void ClickLoginLink()
         {
-            LoginLink.ClickElement();
+            LoginLink.ClickElement();//SeleniumCustomMethods
         }
 
         public void Login(string username, string password)
         {
-            TxtUserName.Clear();
-            TxtUserName.EnterText(username);
+            TxtUserName.Clear();//Limpia el campo antes de escribir
+            TxtUserName.EnterText(username);//acá se escribe el usuario y es una extensión personalizada
+            //ya que normalmente se usaría TxtUserName.SendKeys(username);
 
-            TxtPassword.Clear();
+            TxtPassword.Clear();//buena practica
             TxtPassword.EnterText(password);
-            BtnLogin.SubmitElement();
+            BtnLogin.SubmitElement();// Envía el formulario y también es otra extensión personalizada.
         }
 
+        //Esto basicamente devuelve una tupla con tres valores
+        //booleanos que indican si los enlaces "Employee Details",
+        //"Manage Users" y "Log off" están visibles en la página
+        //después de iniciar sesión. Esto se puede usar para verificar
+        //si el inicio de sesión fue exitoso y si los elementos
+        //específicos de la página están disponibles para el usuario.
         public (bool employeeDetails, bool manageUsers, bool lnkLogoff) IsLoggedIn()
         {
             return (LnkEmployeeDetails.Displayed, LnkManageUsers.Displayed, LnkLogoff.Displayed);

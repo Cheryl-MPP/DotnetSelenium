@@ -12,17 +12,21 @@ namespace DotnetSelenium
 
 
         //parametrizamos el driver dentro del click
-
+        //para que el método sea más flexible y se
+        //pueda usar en cualquier parte del proyecto
         public static void ClickElement(this IWebElement locator)
         {
             locator.Click();
         }
 
+        //este método va a enviar el formulario, es decir,
+        //va a hacer clic en el botón de envío
         public static void SubmitElement(this IWebElement locator)
         {
             locator.Submit();
         }
 
+        //este método va a limpiar el campo de texto antes de escribir
         public static void EnterText(this IWebElement locator, string text)
         {
             //este método va a limpiar el campo de texto antes de escribir
@@ -32,13 +36,14 @@ namespace DotnetSelenium
             locator.SendKeys(text);
         }
 
+        
         public static void SelectDropdownByText(this IWebElement locator, string text)
         {
             var selectElement = new SelectElement(locator);
             selectElement.SelectByText(text);
         }
 
-
+        //este método va a seleccionar una opción del dropdown por su valor
         public static void SelectDropdownByValue(this IWebDriver driver, By locator, string value)
         {
             var selectElement = new SelectElement(driver.FindElement(locator));
