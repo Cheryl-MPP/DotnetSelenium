@@ -18,7 +18,7 @@ namespace DataDrivenTesting
         public void Setup()
         {
             _driver = new ChromeDriver();//inicializa el driver de Chrome
-            _driver.Navigate().GoToUrl("http://eaapp.somee.com/");//navega a la URL de la aplicación
+            _driver.Navigate().GoToUrl("http://eaapp.somee.com/Account/Login");//navega a la URL de la aplicación
             _driver.Manage().Window.Maximize();//maximiza la ventana del navegador
         }
 
